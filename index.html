@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>VitalGuard - Dashboard</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+    <link rel="stylesheet" href="https://unpkg.com/leaflet/dist/leaflet.css" />
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="sidebar">
+        <div class="branding">
+            <img src="logo.jpeg" alt="Logo" class="logo">
+            <h1>VitalGuard</h1>
+        </div>
+        <a href="#" class="active"><i class="fa-solid fa-house"></i> <span>Dashboard</span></a>
+        <a href="#"><i class="fa-solid fa-user-injured"></i> <span>Patients</span></a>
+        <a href="#"><i class="fa-solid fa-triangle-exclamation"></i> <span>Alertes <span
+                    class="badge">1</span></span></a>
+        <a href="#"><i class="fa-solid fa-chart-line"></i> <span>Historique</span></a>
+        <hr>
+        <a href="#"><i class="fa-solid fa-gear"></i> <span>Paramètres</span></a>
+    </div>
+    <div class="header">
+        <h2>Vue générale > Ahmed TIKOUTA</h2>
+        <div class="buttons">
+            <div><i class="fa-solid fa-bell"></i></div>
+            <div><i class="fa-solid fa-message"></i></div>
+            <div><i class="fa-solid fa-circle-half-stroke"></i></div>
+        </div>
+    </div>
+    <div class="main">
+        <div class="cards">
+            <div class="card bpm">
+                <h3><i class="fa-solid fa-heart-pulse icon"></i> <span id="bpmVal">72</span> BPM <span class="badge"
+                        id="bpmBadge">+2%</span></h3>
+                <p>Rythme cardiaque</p>
+            </div>
+            <div class="card falls">
+                <h3><i class="fa-solid fa-person-falling icon"></i> <span id="fallsVal">3</span> <span class="badge"
+                        id="fallsBadge">-1</span></h3>
+                <p>Chutes détectées aujourd'hui</p>
+            </div>
+            <div class="card temp">
+                <h3><i class="fa-solid fa-temperature-full"></i> <span id="braceletsVal">36.9</span></h3>
+                <p>Température du Corps</p>
+            </div>
+            <div class="card alerts">
+                <h3><i class="fa-solid fa-circle-exclamation icon"></i> 2 <span class="badge">Nouvelle</span></h3>
+                <p>Alertes SOS actives / Jour</p>
+            </div>
+        </div>
+
+        <div class="graphs">
+            <div class="chart-small">
+                <h3>Localisation actuelle</h3>
+                <div id="map"></div>
+            </div>
+            <div class="chart-large">
+                <h3>Statistiques hebdomadaires</h3>
+                <canvas id="weeklyChart"></canvas>
+            </div>
+        </div>
+    </div>
+    <div id="vital-btn"><i class="fa-solid fa-robot"></i></div>
+    <div id="chatbot">
+        <div id="chatbot-header"><i class="fa-solid fa-robot"></i> Assistant AI</div>
+        <div id="chatbot-messages"></div>
+        <div id="chatbot-input">
+            <input type="text" id="userMessage" placeholder="Posez une question sur le patient..." />
+        </div>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="https://unpkg.com/leaflet/dist/leaflet.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>
